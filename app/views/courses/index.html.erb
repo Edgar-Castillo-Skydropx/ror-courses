@@ -5,6 +5,7 @@
 <table class='table'>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Title</th>
       <th>Description</th>
       <th colspan="4"></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
+        <td><%= course.id %></td>
         <td><%= course.title %></td>
         <td><%= course.description %></td>
         <td><%= link_to 'Show', course %></td>
