@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Questions" %>
+
+<h1>Questions</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Lesson</th>
+      <th>Content</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.lesson_id %></td>
+        <td><%= question.content %></td>
+        <td><%= link_to 'Show', lesson_question_path(question.lesson_id, question.id) %></td>
+        <td><%= link_to 'Edit', edit_lesson_question_path(question.lesson_id, question) %></td>
+        <td><%= link_to 'Destroy', lesson_question_path(question.lesson_id, question.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New question", new_lesson_question_path(@lesson) %>

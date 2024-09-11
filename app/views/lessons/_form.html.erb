@@ -1,4 +1,4 @@
-<%= form_with(model: lesson, url: [@course, lesson]) do |form| %>
+<%= form_with(model: lesson, url: [course, lesson]) do |form| %>
   <% if lesson.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
@@ -10,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+
+  <div>
+    <%= form.label :course_id, style: "display: block;" %>
+    <%= form.text_field :course_id, disabled: true %>
+  </div>
 
   <div>
     <%= form.label :title, style: "display: block" %>
