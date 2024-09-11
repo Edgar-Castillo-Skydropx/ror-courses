@@ -11,6 +11,10 @@
 
 <hr/>
 
+<%= turbo_stream_from @lesson %>
+
+<hr/>
+
 <%= turbo_frame_tag 'lesson-question-new', src: new_lesson_question_path(@lesson) %>
 
 <hr/>
