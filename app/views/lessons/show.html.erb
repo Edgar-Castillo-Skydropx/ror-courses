@@ -8,3 +8,11 @@
 
   <%= button_to "Destroy this lesson", [@course, @lesson], method: :delete %>
 </div>
+
+<hr/>
+
+<%= turbo_frame_tag 'lesson-question-new', src: new_lesson_question_path(@lesson) %>
+
+<hr/>
+
+<%= turbo_frame_tag 'lesson-question-list', src: lesson_questions_path(@lesson) %>

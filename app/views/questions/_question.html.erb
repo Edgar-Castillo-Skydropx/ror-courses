@@ -1,12 +1,7 @@
-<div id="<%= dom_id question %>">
-  <p>
-    <strong>Lesson:</strong>
-    <%= question.lesson_id %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= question.content %>
-  </p>
-
-</div>
+<tr>
+    <td><%= question.lesson_id %></td>
+    <td><%= question.content %></td>
+    <td><%= link_to 'Show', lesson_question_path(question.lesson_id, question.id), target: '_top' %></td>
+    <td><%= link_to 'Edit', edit_lesson_question_path(question.lesson_id, question), target: '_top' %></td>
+    <td><%= link_to 'Destroy', lesson_question_path(question.lesson_id, question.id), method: :delete, data: { confirm: 'Are you sure?' }, target: '_top' %></td>
+</tr>

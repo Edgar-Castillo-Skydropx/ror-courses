@@ -8,3 +8,5 @@
 
   <%= button_to "Destroy this course", @course, method: :delete %>
 </div>
+
+<%= turbo_frame_tag 'course-lesson-list', src: course_lessons_path(@course) %>
